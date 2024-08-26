@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfmhm6av11cf3"]
+
+[ext_resource type="Shader" path="res://pixel_outline.gdshader" id="1_8v0hy"]
+[ext_resource type="Texture2D" uid="uid://h0j8qigivqoh" path="res://GrahaSprites/burger.png" id="2_lcxiy"]
+[ext_resource type="Script" path="res://Draggable.gd" id="3_opkw4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4smj"]
+shader = ExtResource("1_8v0hy")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1nip"]
+size = Vector2(85, 76)
+
+[node name="Burger" type="Area2D"]
+position = Vector2(-239, -221)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Burger" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_j4smj")
+position = Vector2(0, -3)
+scale = Vector2(4, 4)
+texture = ExtResource("2_lcxiy")
+
+[node name="Draggable" type="Node2D" parent="."]
+position = Vector2(0, 1)
+script = ExtResource("3_opkw4")
+
+[node name="VeryBig" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_j1nip")
+
+[node name="ExpireTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="Draggable" method="_on_cake_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Draggable" method="_on_cake_mouse_exited"]

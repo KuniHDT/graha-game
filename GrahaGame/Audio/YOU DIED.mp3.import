@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hmprvngsvrbm"
+path="res://.godot/imported/YOU DIED.mp3-baf3da7943a01c9adb254f1e7bba19c5.mp3str"
+
+[deps]
+
+source_file="res://Audio/YOU DIED.mp3"
+dest_files=["res://.godot/imported/YOU DIED.mp3-baf3da7943a01c9adb254f1e7bba19c5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

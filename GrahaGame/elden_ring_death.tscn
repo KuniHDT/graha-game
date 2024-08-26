@@ -1,0 +1,195 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvl3qyyo1dx23"]
+
+[ext_resource type="Script" path="res://EldenRingDeath.gd" id="1_fo8hp"]
+[ext_resource type="Texture2D" uid="uid://bm76nbchabox5" path="res://UI/elden_ring_background.png" id="2_n4abb"]
+[ext_resource type="FontFile" uid="uid://bsa38noiukn0w" path="res://OptimusPrinceps.ttf" id="3_ioilo"]
+
+[sub_resource type="Animation" id="Animation_xlijv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.4119, 4.39447)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.38612, 2.37669)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p1vdy"]
+resource_name = "anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 4.3, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.57, 4.3, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3.447, 3.433), Vector2(3.92932, 3.9138), Vector2(3.92932, 3.9138), Vector2(4.124, 4.108)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 4.3, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.38612, 2.37669), Vector2(2.38612, 2.37669), Vector2(2.631, 2.621)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.48, 2.26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.9, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_audio"
+}, {
+"args": [],
+"method": &"restart"
+}, {
+"args": [],
+"method": &"finish"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gt511"]
+_data = {
+"RESET": SubResource("Animation_xlijv"),
+"anim": SubResource("Animation_p1vdy")
+}
+
+[node name="EldenRingDeath" type="Control"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fo8hp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -356.0
+offset_top = -94.0
+offset_right = -116.0
+offset_bottom = -30.0
+scale = Vector2(3.11696, 3.11696)
+texture = ExtResource("2_n4abb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = -31.0
+offset_top = -18.0
+offset_right = 32.0
+offset_bottom = 6.0
+scale = Vector2(4.4119, 4.39447)
+pivot_offset = Vector2(31.0415, 12.8168)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/normal_font = ExtResource("3_ioilo")
+theme_override_fonts/bold_font = ExtResource("3_ioilo")
+bbcode_enabled = true
+text = "[b][color=red]HE DIED"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 3
+layout_mode = 0
+offset_left = -126.0
+offset_top = 29.0
+offset_right = 66.0
+offset_bottom = 53.0
+scale = Vector2(2.38612, 2.37669)
+pivot_offset = Vector2(72.5026, 11.3603)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/normal_font = ExtResource("3_ioilo")
+theme_override_fonts/bold_font = ExtResource("3_ioilo")
+bbcode_enabled = true
+text = "[center][color=red]G'RAHA HAS STARVED"
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gt511")
+}

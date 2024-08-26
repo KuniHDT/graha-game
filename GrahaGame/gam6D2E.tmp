@@ -1,0 +1,1022 @@
+[gd_scene load_steps=66 format=3 uid="uid://y0k3i0qtgw0k"]
+
+[ext_resource type="Script" path="res://game_spawner.gd" id="1_7bew8"]
+[ext_resource type="Script" path="res://FoodDetector.gd" id="1_b36rx"]
+[ext_resource type="Script" path="res://Graha.gd" id="1_w2bgs"]
+[ext_resource type="Shader" path="res://pixel_outline.gdshader" id="2_jjebu"]
+[ext_resource type="Texture2D" uid="uid://bj4jwd72ehpat" path="res://GrahaSprites/grahaidle.png" id="2_lfvpg"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_7pnmi"]
+[ext_resource type="Texture2D" uid="uid://dodj63qtplb5i" path="res://GrahaSprites/grahawiggle1.png" id="3_s3nlv"]
+[ext_resource type="Script" path="res://GUI.gd" id="4_15gpu"]
+[ext_resource type="Texture2D" uid="uid://ccs2m0rl5bs5a" path="res://GrahaSprites/grahawiggle2.png" id="4_h112j"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_uw1k7"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/animation_player_state.gd" id="5_5q0v5"]
+[ext_resource type="Texture2D" uid="uid://cvq0krplcl802" path="res://GrahaSprites/grahawiggle3.png" id="5_lvn0g"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_084dm"]
+[ext_resource type="Texture2D" uid="uid://cpgtveqloed0s" path="res://GrahaSprites/grahawiggle4.png" id="6_l7sf2"]
+[ext_resource type="Texture2D" uid="uid://cor7aku4epuka" path="res://GrahaSprites/grahablink1.png" id="7_37g4j"]
+[ext_resource type="Texture2D" uid="uid://pxw3grb8lug4" path="res://GrahaSprites/grahabite1.png" id="8_fksda"]
+[ext_resource type="Texture2D" uid="uid://dnqabec5euoq7" path="res://GrahaSprites/grahablink4.png" id="8_ldrth"]
+[ext_resource type="Texture2D" uid="uid://cgbd5dbe2yor6" path="res://GrahaSprites/grahablink3.png" id="9_704tr"]
+[ext_resource type="Texture2D" uid="uid://cvh775n6aey3b" path="res://GrahaSprites/grahabite2.png" id="9_fst56"]
+[ext_resource type="Texture2D" uid="uid://bxaya0f07w02k" path="res://GrahaSprites/grahachew1.png" id="10_sgsgb"]
+[ext_resource type="Texture2D" uid="uid://bv6ijnoiurtug" path="res://GrahaSprites/grahablink2.png" id="10_suart"]
+[ext_resource type="Texture2D" uid="uid://skkkigu1kjmp" path="res://GrahaSprites/grahachew2.png" id="11_m503t"]
+[ext_resource type="Texture2D" uid="uid://chsfamyixryjw" path="res://GrahaSprites/grahablink5.png" id="11_p8rss"]
+[ext_resource type="Texture2D" uid="uid://c8cp3mnct1qt0" path="res://GrahaSprites/grahachew3.png" id="12_laj4e"]
+[ext_resource type="Script" path="res://MortisDeath.gd" id="13_yaq84"]
+[ext_resource type="FontFile" uid="uid://d2opn1fgauj8y" path="res://faith.otf" id="14_d1a68"]
+[ext_resource type="Texture2D" uid="uid://mu8w3myuvbed" path="res://GrahaSprites/grahaopenmouth1.png" id="14_rsw5p"]
+[ext_resource type="Texture2D" uid="uid://ds1i54tp1fuu" path="res://GrahaSprites/grahaopenmouth2.png" id="15_ty736"]
+[ext_resource type="Texture2D" uid="uid://iq0ysiqa5mnf" path="res://GrahaSprites/grahaopenmouth3.png" id="16_duwyi"]
+[ext_resource type="Texture2D" uid="uid://xkets70vn7sk" path="res://UI/bar_under.png" id="29_fbicj"]
+[ext_resource type="Texture2D" uid="uid://buf577jwkkfux" path="res://GrahaSprites/stomach.png" id="29_ovy3f"]
+[ext_resource type="Shader" path="res://background.gdshader" id="30_dtj54"]
+[ext_resource type="Theme" uid="uid://b8t06tjrl5bko" path="res://theme.tres" id="30_pscuc"]
+[ext_resource type="Texture2D" uid="uid://beumelrfn7y4n" path="res://UI/bar_progress.png" id="30_x2tx4"]
+[ext_resource type="Texture2D" uid="uid://c42urbbxy3kk" path="res://background.png" id="31_vdrg0"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="32_w8u5h"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="33_n2j5b"]
+[ext_resource type="AudioStream" uid="uid://c0dlhxgo22t8o" path="res://Audio/EatingSounds.mp3" id="34_84hc5"]
+[ext_resource type="Texture2D" uid="uid://h0j8qigivqoh" path="res://GrahaSprites/burger.png" id="35_ryksy"]
+[ext_resource type="Texture2D" uid="uid://cs7fnhfpl1hlm" path="res://GrahaSprites/taco.png" id="36_2kk5l"]
+[ext_resource type="Texture2D" uid="uid://bj8u1lnvr0yvn" path="res://GrahaSprites/namazu_bun.png" id="37_nraqg"]
+[ext_resource type="AudioStream" uid="uid://cxig2g2ih5bo5" path="res://Audio/Papaya.mp3" id="38_6wdl6"]
+[ext_resource type="Texture2D" uid="uid://ctg0febeg320u" path="res://GrahaSprites/dango.png" id="38_er6xl"]
+[ext_resource type="Texture2D" uid="uid://csfvnup16wcwe" path="res://GrahaSprites/pill.png" id="39_uaxlq"]
+[ext_resource type="VideoStream" path="res://MORTIS.ogv" id="44_i8s3p"]
+[ext_resource type="AudioStream" uid="uid://hmprvngsvrbm" path="res://Audio/YOU DIED.mp3" id="48_xno6s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b3whh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpqkn"]
+shader = ExtResource("2_jjebu")
+shader_parameter/color = Color(0, 0.952941, 0.937255, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = true
+shader_parameter/add_margins = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6viye"]
+shader = ExtResource("2_jjebu")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="Animation" id="Animation_118mf"]
+resource_name = "anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:self_modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b0ob3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52mmd"]
+_data = {
+"RESET": SubResource("Animation_b0ob3"),
+"anim": SubResource("Animation_118mf")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mf6j"]
+shader = ExtResource("30_dtj54")
+shader_parameter/speed = 0.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmgjv"]
+radius = 186.003
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6546d"]
+shader = ExtResource("2_jjebu")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u06u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fksda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fst56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sgsgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m503t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_laj4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sgsgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m503t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_laj4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sgsgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m503t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_laj4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sgsgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m503t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_laj4e")
+}],
+"loop": false,
+"name": &"bite",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lfvpg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 30.0,
+"texture": ExtResource("2_lfvpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s3nlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h112j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lvn0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l7sf2")
+}, {
+"duration": 10.0,
+"texture": ExtResource("2_lfvpg")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_37g4j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_ldrth")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_704tr")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_suart")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_p8rss")
+}, {
+"duration": 30.0,
+"texture": ExtResource("2_lfvpg")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_37g4j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_suart")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_704tr")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_ldrth")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_p8rss")
+}, {
+"duration": 20.0,
+"texture": ExtResource("2_lfvpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s3nlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h112j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lvn0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l7sf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s3nlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h112j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lvn0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l7sf2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rsw5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ty736")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_duwyi")
+}],
+"loop": false,
+"name": &"open_mouth",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f413"]
+size = Vector2(44, 33.5)
+
+[sub_resource type="Animation" id="Animation_ts0f8"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrahaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrahaSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["bite"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"bite_end"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hm73y"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrahaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrahaSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["chew"]
+}
+
+[sub_resource type="Animation" id="Animation_x08as"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrahaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrahaSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="Animation" id="Animation_y6yk8"]
+length = 10.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrahaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 3.2, 3.3, 3.4, 4.4, 4.45, 4.5, 4.55, 4.6, 4.65, 7.65, 7.7, 7.75, 7.8, 7.85, 7.9, 9.9, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrahaSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+
+[sub_resource type="Animation" id="Animation_0qsvi"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrahaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrahaSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["open_mouth"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p2cs"]
+_data = {
+"bite": SubResource("Animation_ts0f8"),
+"chew": SubResource("Animation_hm73y"),
+"default": SubResource("Animation_x08as"),
+"idle": SubResource("Animation_y6yk8"),
+"open_mouth": SubResource("Animation_0qsvi")
+}
+
+[sub_resource type="Resource" id="Resource_ta3vs"]
+script = ExtResource("33_n2j5b")
+name = "eat"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("34_84hc5")])
+
+[sub_resource type="Resource" id="Resource_1xvg4"]
+script = ExtResource("33_n2j5b")
+name = "elden_ring_die"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("48_xno6s")])
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7bew8")
+metadata/_edit_vertical_guides_ = [0.0]
+metadata/_edit_horizontal_guides_ = [-150.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+follow_viewport_enabled = true
+
+[node name="GUI" type="Control" parent="CanvasLayer"]
+process_mode = 3
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -636.0
+offset_top = -363.0
+offset_right = -636.0
+offset_bottom = -363.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_15gpu")
+
+[node name="HungerText" type="RichTextLabel" parent="CanvasLayer/GUI"]
+material = SubResource("ShaderMaterial_b3whh")
+layout_mode = 0
+offset_left = 380.0
+offset_top = 570.0
+offset_right = 420.0
+offset_bottom = 610.0
+scale = Vector2(2.00117, 2.00117)
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = " Text"
+scroll_active = false
+
+[node name="StartText" type="RichTextLabel" parent="CanvasLayer/GUI"]
+material = SubResource("ShaderMaterial_b3whh")
+layout_mode = 0
+offset_left = 421.0
+offset_top = 351.0
+offset_right = 671.0
+offset_bottom = 373.0
+scale = Vector2(2.00117, 2.00117)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Click or Tap Anywhere To Start"
+scroll_active = false
+
+[node name="MAX" type="RichTextLabel" parent="CanvasLayer/GUI"]
+material = SubResource("ShaderMaterial_b3whh")
+layout_mode = 0
+offset_left = 345.0
+offset_top = 72.0
+offset_right = 385.0
+offset_bottom = 112.0
+scale = Vector2(1.69267, 1.69267)
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "[color=darkred]MAX!"
+scroll_active = false
+
+[node name="ScoreText" type="RichTextLabel" parent="CanvasLayer/GUI"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 630.0
+offset_right = 761.0
+offset_bottom = 663.0
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = " Text"
+
+[node name="DifficultyText" type="RichTextLabel" parent="CanvasLayer/GUI"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 609.0
+offset_right = 761.0
+offset_bottom = 642.0
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = " Text"
+
+[node name="HungerBar" type="TextureProgressBar" parent="CanvasLayer/GUI"]
+material = SubResource("ShaderMaterial_vpqkn")
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 56.0
+offset_top = 250.0
+offset_right = 60.0
+offset_bottom = 254.0
+grow_horizontal = 2
+rotation = 3.14159
+scale = Vector2(4, 4)
+pivot_offset = Vector2(2, 80.5714)
+value = 100.0
+fill_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("29_fbicj")
+texture_progress = ExtResource("30_x2tx4")
+
+[node name="Tutorial" type="Control" parent="CanvasLayer/GUI"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 3
+anchors_preset = 0
+offset_left = 636.0
+offset_top = 362.0
+offset_right = 676.0
+offset_bottom = 402.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -308.0
+offset_top = -305.0
+offset_right = 267.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="HungerBar" type="TextureProgressBar" parent="CanvasLayer/GUI/Tutorial"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = -112.0
+offset_right = -296.0
+offset_bottom = -71.0
+grow_horizontal = 2
+rotation = 3.14159
+scale = Vector2(4, 4)
+pivot_offset = Vector2(2, 80.5714)
+value = 73.0
+fill_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("29_fbicj")
+texture_progress = ExtResource("30_x2tx4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = -279.0
+offset_top = -241.0
+offset_right = -77.0
+offset_bottom = -201.0
+rotation = -0.174533
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "How to play"
+scroll_active = false
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -272.0
+offset_right = 201.0
+offset_bottom = -232.0
+rotation = -0.174533
+scale = Vector2(1.13407, 1.13407)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "[color=darkgreen](don't worry
+the game is paused!)"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = -139.0
+offset_top = 214.0
+offset_right = 86.0
+offset_bottom = 251.0
+rotation = -0.174533
+scale = Vector2(2, 2)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "You will [color=red]lose the game if you starve or overfeed G'raha!!!"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = -259.0
+offset_top = 221.0
+offset_right = -34.0
+offset_bottom = 258.0
+rotation = -0.333663
+scale = Vector2(1.17471, 1.17471)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Watch his hunger meter!!"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = -277.0
+offset_top = -174.0
+offset_right = 119.0
+offset_bottom = -132.0
+rotation = -0.174533
+scale = Vector2(1.32894, 1.32894)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Click and drag food to G'raha's mouth to feed him! Each food / item has different effects!"
+scroll_active = false
+
+[node name="HelpText2" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 272.0
+offset_right = 278.0
+offset_bottom = 312.0
+scale = Vector2(1.29328, 1.29328)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Press [color=red]T[/color] again to close!"
+scroll_active = false
+
+[node name="Control" type="Control" parent="CanvasLayer/GUI/Tutorial"]
+anchors_preset = 0
+offset_left = -6.0
+offset_top = 59.0
+offset_right = 34.0
+offset_bottom = 99.0
+mouse_filter = 2
+
+[node name="Burger" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(-237, -135)
+rotation = -0.174533
+scale = Vector2(3, 3)
+texture = ExtResource("35_ryksy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = -162.0
+offset_right = 12.0
+offset_bottom = -122.0
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "= 50 pts"
+scroll_active = false
+
+[node name="Taco" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(-225, -62)
+rotation = -0.174533
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("36_2kk5l")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = -177.0
+offset_top = -92.0
+offset_right = 25.0
+offset_bottom = -52.0
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "= 30 pts"
+scroll_active = false
+
+[node name="Bun" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(-213, -0.999992)
+rotation = -0.174533
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("37_nraqg")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = -166.0
+offset_top = -28.0
+offset_right = 36.0
+offset_bottom = 12.0
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "= 15 pts"
+scroll_active = false
+
+[node name="Dango" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(-197, 70)
+rotation = 0.322886
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("38_er6xl")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 41.0
+offset_right = 50.0
+offset_bottom = 81.0
+rotation = -0.174533
+scale = Vector2(2.5, 2.5)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "= 5 pts"
+scroll_active = false
+
+[node name="Stomach" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(41.3211, -147.355)
+rotation = -0.174533
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("29_ovy3f")
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = 80.3211
+offset_top = -189.355
+offset_right = 208.321
+offset_bottom = -137.355
+rotation = -0.174533
+scale = Vector2(1.33372, 1.33372)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Makes the [color=crimson]hunger meter[/color] longer!"
+scroll_active = false
+
+[node name="Pill" type="Sprite2D" parent="CanvasLayer/GUI/Tutorial/Control"]
+material = SubResource("ShaderMaterial_6viye")
+position = Vector2(61.3211, -54.3554)
+rotation = 0.275399
+scale = Vector2(4, 4)
+texture = ExtResource("39_uaxlq")
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CanvasLayer/GUI/Tutorial/Control"]
+layout_mode = 0
+offset_left = 96.3211
+offset_top = -96.3554
+offset_right = 246.321
+offset_bottom = -39.3554
+rotation = -0.174533
+scale = Vector2(1.33372, 1.33372)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Gain [color=cyan]protection[/color] from one instance of overfeeding!"
+scroll_active = false
+
+[node name="HelpText" type="RichTextLabel" parent="CanvasLayer/GUI"]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 634.0
+offset_right = 974.0
+offset_bottom = 674.0
+scale = Vector2(1.29328, 1.29328)
+mouse_filter = 2
+theme = ExtResource("30_pscuc")
+bbcode_enabled = true
+text = "Press [color=red]T[/color] for help!"
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GUI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 302.0
+offset_top = 2.0
+offset_right = 342.0
+offset_bottom = 42.0
+scale = Vector2(18.3549, 18.3549)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MortisDeath" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -636.0
+offset_top = -363.0
+offset_right = -596.0
+offset_bottom = -323.0
+script = ExtResource("13_yaq84")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/MortisDeath"]
+offset_left = 72.0
+offset_top = 44.0
+offset_right = 1992.0
+offset_bottom = 1132.0
+scale = Vector2(0.588199, 0.588199)
+stream = ExtResource("44_i8s3p")
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MortisDeath"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 510.0
+offset_top = 384.0
+offset_right = 765.0
+offset_bottom = 408.0
+theme_override_fonts/normal_font = ExtResource("14_d1a68")
+theme_override_fonts/bold_font = ExtResource("14_d1a68")
+bbcode_enabled = true
+text = "[center]G'RAHA STARVED"
+fit_content = true
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/MortisDeath"]
+libraries = {
+"": SubResource("AnimationLibrary_52mmd")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3mf6j")
+position = Vector2(13.5121, -4.01289)
+scale = Vector2(3.88642, 3.88642)
+texture = ExtResource("31_vdrg0")
+
+[node name="FoodDetector" type="Area2D" parent="."]
+position = Vector2(0, 181)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_b36rx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodDetector"]
+shape = SubResource("CircleShape2D_hmgjv")
+
+[node name="Graha" type="Area2D" parent="."]
+process_mode = 3
+script = ExtResource("1_w2bgs")
+
+[node name="StateChart" type="Node" parent="Graha"]
+unique_name_in_owner = true
+script = ExtResource("3_7pnmi")
+
+[node name="Main" type="Node" parent="Graha/StateChart"]
+script = ExtResource("4_uw1k7")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="Graha/StateChart/Main"]
+script = ExtResource("5_5q0v5")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = &"idle"
+
+[node name="To OpenMouth" type="Node" parent="Graha/StateChart/Main/Idle"]
+script = ExtResource("6_084dm")
+to = NodePath("../../OpenMouth")
+event = &"open_mouth"
+
+[node name="To Death" type="Node" parent="Graha/StateChart/Main/Idle"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Death")
+event = &"die"
+
+[node name="OpenMouth" type="Node" parent="Graha/StateChart/Main"]
+script = ExtResource("5_5q0v5")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = &"open_mouth"
+
+[node name="To Idle" type="Node" parent="Graha/StateChart/Main/OpenMouth"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Idle")
+event = &"reset"
+
+[node name="To Bite" type="Node" parent="Graha/StateChart/Main/OpenMouth"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Bite")
+event = &"bite"
+
+[node name="To Death" type="Node" parent="Graha/StateChart/Main/OpenMouth"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Death")
+event = &"die"
+
+[node name="Bite" type="Node" parent="Graha/StateChart/Main"]
+script = ExtResource("5_5q0v5")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = &"bite"
+
+[node name="To OpenMouth" type="Node" parent="Graha/StateChart/Main/Bite"]
+script = ExtResource("6_084dm")
+to = NodePath("../../OpenMouth")
+event = &"open_mouth"
+
+[node name="To Idle" type="Node" parent="Graha/StateChart/Main/Bite"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Idle")
+event = &"reset"
+
+[node name="To Death" type="Node" parent="Graha/StateChart/Main/Bite"]
+script = ExtResource("6_084dm")
+to = NodePath("../../Death")
+event = &"die"
+
+[node name="Death" type="Node" parent="Graha/StateChart/Main"]
+script = ExtResource("5_5q0v5")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = &"death"
+
+[node name="GrahaSprite" type="AnimatedSprite2D" parent="Graha"]
+material = SubResource("ShaderMaterial_6546d")
+position = Vector2(1, 167)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_u06u8")
+animation = &"bite"
+autoplay = "idle"
+frame = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graha"]
+position = Vector2(-1, 222)
+shape = SubResource("RectangleShape2D_4f413")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Graha"]
+libraries = {
+"": SubResource("AnimationLibrary_7p2cs")
+}
+
+[node name="SoundBank" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("32_w8u5h")
+label = "sfx"
+events = Array[ExtResource("33_n2j5b")]([SubResource("Resource_ta3vs"), SubResource("Resource_1xvg4")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("38_6wdl6")
+volume_db = -3.0
+autoplay = true
+
+[node name="FoodTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="area_entered" from="FoodDetector" to="FoodDetector" method="_on_area_entered"]
+[connection signal="area_exited" from="FoodDetector" to="FoodDetector" method="_on_area_exited"]
+[connection signal="area_entered" from="Graha" to="Graha" method="_on_area_entered"]
+[connection signal="state_entered" from="Graha/StateChart/Main/Bite" to="Graha" method="_on_bite_state_entered"]
+[connection signal="state_entered" from="Graha/StateChart/Main/Death" to="Graha" method="_on_death_state_entered"]
+[connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]

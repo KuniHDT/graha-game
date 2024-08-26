@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh6dtxjqqlxnw"]
+
+[ext_resource type="Script" path="res://NormalDeath.gd" id="1_rn4fl"]
+[ext_resource type="Texture2D" uid="uid://dvf0gsgpf13m2" path="res://Duty_Failed_Image.png" id="2_jdxod"]
+
+[sub_resource type="Animation" id="Animation_qirrj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.796769, 0.796769)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_61pdk"]
+resource_name = "anim"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.09511, 1.09511), Vector2(0.796769, 0.796769), Vector2(0.796769, 0.796769)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.9, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"restart"
+}, {
+"args": [],
+"method": &"finish"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pb0rp"]
+_data = {
+"RESET": SubResource("Animation_qirrj"),
+"anim": SubResource("Animation_61pdk")
+}
+
+[node name="NormalDeath" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rn4fl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -639.0
+offset_top = -189.0
+offset_right = 641.0
+offset_bottom = 171.0
+scale = Vector2(0.796769, 0.796769)
+pivot_offset = Vector2(640.085, 189.515)
+texture = ExtResource("2_jdxod")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.756863)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 200.811
+offset_top = 117.977
+offset_right = 240.811
+offset_bottom = 157.977
+scale = Vector2(22.6566, 3.26409)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pb0rp")
+}

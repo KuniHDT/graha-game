@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://yu5byqct575d"]
+
+[ext_resource type="Shader" path="res://pixel_outline.gdshader" id="1_xjrkl"]
+[ext_resource type="Texture2D" uid="uid://buf577jwkkfux" path="res://GrahaSprites/stomach.png" id="2_cadsy"]
+[ext_resource type="Script" path="res://Draggable.gd" id="3_07csd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4smj"]
+shader = ExtResource("1_xjrkl")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1nip"]
+size = Vector2(67, 77)
+
+[node name="Stomach" type="Area2D"]
+position = Vector2(272, -97)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Stomach2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_j4smj")
+position = Vector2(0, -3)
+scale = Vector2(4, 4)
+texture = ExtResource("2_cadsy")
+
+[node name="Draggable" type="Node2D" parent="."]
+position = Vector2(0, 1)
+script = ExtResource("3_07csd")
+
+[node name="Stomach" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_j1nip")
+
+[node name="ExpireTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="Draggable" method="_on_cake_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Draggable" method="_on_cake_mouse_exited"]
